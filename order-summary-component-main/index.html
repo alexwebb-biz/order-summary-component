@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | Order summary card</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+
+    @media only screen and (min-width:600px){
+      *{
+      margin:0;
+      padding:0;
+      font-family: 'Red Hat Display', sans-serif;
+    }
+    .attribution { font-size: 11px; text-align: center; }
+    
+
+    .page{
+      width:100%;
+      height:100vh;
+      background-image:url('./images/pattern-background-desktop.svg');
+      background-size:cover;
+      background-repeat:no-repeat;
+      position: relative;
+    }
+
+    .container{
+      width:60vh;
+      max-width:500px;
+      height:60vh;
+      position: absolute;
+      top:50%;
+      left:50%;
+      transform: translate(-50%,-50%);
+      border-radius:15px;
+      box-shadow: 0px 20px 28px hsl(224, 23%, 55%, 0.2);
+
+    }
+    a { color: hsl(228, 45%, 44%); text-decoration: underline; font-weight:900;}
+    .top{
+      height:30%;
+      margin:0;
+      background-image:url('./images/illustration-hero.svg');
+      background-size:cover;
+      background-position: center;
+      border-radius:15px 15px 0px 0px;
+      }
+    
+    .bottom{
+      height:70%;
+      margin:0;
+      background-color:hsl(225, 100%, 98%);
+      border-radius: 0px 0px 15px 15px;
+      text-align:center;
+      position: relative;
+    }
+
+    .content{
+      position: absolute;
+      top:50%;
+      left:50%;
+      transform:translate(-50%, -50%);
+      width:70%;
+    }
+
+    h1{
+      font-size:28px;
+      width:100%;
+      font-weight:900;
+      padding-bottom:1rem;
+    }
+
+    h3{
+      font-size:16px;
+      font-weight:500;
+      padding-bottom:2rem;
+    }
+
+    .row{
+      width:100%;
+      margin-top:2rem;
+    }
+
+    .col-1, .col-2, .col-3{
+      float:left;
+    }
+
+    .col-1{
+      width:25%;
+      text-align:center;
+    }
+
+    .col-2{
+      width:45%;
+      text-align: left;
+    }
+
+    .col-3{
+      width:30%;
+      text-align:center;
+      padding-top:10px;
+    }
+
+    .bold{
+      font-weight:900;
+    }
+
+    .light{
+      font-weight:500;
+      color:hsl(224, 23%, 55%);
+    }
+
+    button.payment{
+      background-color: hsl(245, 75%, 52%);
+      color:white;
+      width: 100%;
+      border-radius:10px;
+      padding:15px;
+      font-size:16px;
+      font-weight:700;
+      border:none;
+      margin-top:3rem;
+      transition:0.8s;
+      box-shadow: 0px 13px 25px hsl(224, 23%, 55%);
+    }
+
+    button.payment:hover{
+      background-color:hsl(224, 23%, 55%);
+       cursor: pointer;
+    }
+
+    button.cancel{
+      color:white;
+      width: 100%;
+      border-radius:10px;
+      padding:15px;
+      font-size:16px;
+      font-weight:700;
+      border:none;
+      margin-top:1.5rem;
+      background:transparent;
+      color:hsl(224, 23%, 55%);
+      transition:0.8s;
+    }
+
+    button.cancel:hover{
+      color:black;
+      cursor: pointer;
+    }
+    }
+    
+    @media only screen and (max-width:600px){
+      *{
+      margin:0;
+      padding:0;
+      font-family: 'Red Hat Display', sans-serif;
+    }
+    .attribution { font-size: 11px; text-align: center; }
+    
+
+    .page{
+      width:100%;
+      height:100vh;
+      background-image:url('./images/pattern-background-desktop.svg');
+      background-size:cover;
+      background-repeat:no-repeat;
+      position: relative;
+    }
+
+    .container{
+      width:90%;
+      height:70vh;
+      position: absolute;
+      top:50%;
+      left:50%;
+      transform: translate(-50%,-50%);
+      border-radius:15px;
+      box-shadow: 0px 20px 28px hsl(224, 23%, 55%, 0.2);
+
+    }
+    a { color: hsl(228, 45%, 44%); text-decoration: underline; font-weight:900;}
+    .top{
+      height:30%;
+      margin:0;
+      background-image:url('./images/illustration-hero.svg');
+      background-size:cover;
+      background-position: center;
+      border-radius:15px 15px 0px 0px;
+      }
+    
+    .bottom{
+      height:70%;
+      margin:0;
+      background-color:hsl(225, 100%, 98%);
+      border-radius: 0px 0px 15px 15px;
+      text-align:center;
+      position: relative;
+    }
+
+    .content{
+      position: absolute;
+      top:50%;
+      left:50%;
+      transform:translate(-50%, -50%);
+      width:70%;
+    }
+
+    h1{
+      font-size:28px;
+      width:100%;
+      font-weight:900;
+      padding-bottom:0.3rem;
+    }
+
+    h3{
+      font-size:16px;
+      font-weight:500;
+      padding-bottom:.6rem;
+    }
+
+    .row{
+      width:100%;
+      margin-top:1.5rem;
+    }
+
+    .col-1, .col-2, .col-3{
+      float:left;
+    }
+
+    .col-1{
+      width:25%;
+      text-align:center;
+    }
+
+    .col-2{
+      width:45%;
+      text-align: left;
+    }
+
+    .col-3{
+      width:30%;
+      text-align:center;
+      padding-top:10px;
+    }
+
+    .bold{
+      font-weight:900;
+    }
+
+    .light{
+      font-weight:500;
+      color:hsl(224, 23%, 55%);
+    }
+
+    button.payment{
+      background-color: hsl(245, 75%, 52%);
+      color:white;
+      width: 100%;
+      border-radius:10px;
+      padding:15px;
+      font-size:16px;
+      font-weight:700;
+      border:none;
+      margin-top:1.5rem;
+      transition:0.8s;
+      box-shadow: 0px 13px 25px hsl(224, 23%, 55%);
+    }
+
+    button.payment:hover{
+      background-color:hsl(224, 23%, 55%);
+       cursor: pointer;
+    }
+
+    button.cancel{
+      color:white;
+      width: 100%;
+      border-radius:10px;
+      padding:15px;
+      font-size:16px;
+      font-weight:700;
+      border:none;
+      margin-top:1.5rem;
+      background:transparent;
+      color:hsl(224, 23%, 55%);
+      transition:0.8s;
+    }
+
+    button.cancel:hover{
+      color:black;
+      cursor: pointer;
+    }
+    }
+
+
+  </style>
+</head>
+<body>
+
+  <div class="page">
+    <div class="container">
+      <div class="top">
+        
+      </div>
+      <div class="bottom">
+        <div class="content">
+          <h1>Order Summary</h1>
+          <h3>You can now listen to millions of songs, audiobooks, and podcats on any device anywhere you like!</h3>
+  
+          <div class="row">
+            <div class="col-1"><img src="./images/icon-music.svg" alt=""></div>
+            <div class="col-2"><span class="bold">Annual Plan</span><br><span class="light">$59.99/year</span></div>
+            <div class="col-3"><a>Change</a></div>
+          </div>
+          <br>
+          <br>
+          <br>
+          <button class="payment">Proceed to Payment</button>
+          <button class="cancel">Cancel Order</button>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Alex Webb</a>.
+  </div>
+</body>
+</html>
